@@ -1,0 +1,13 @@
+created:
+    - database/factories/ClassroomFactory.php
+    - database/factories/ProfessorFactory.php
+    - database/migrations/2021_10_28_002241_create_classrooms_table.php
+    - database/migrations/2021_10_28_002242_create_professors_table.php
+    - app/Models/Classroom.php
+    - app/Models/Professor.php
+    - database/seeders/ClassroomSeeder.php
+    - database/seeders/ProfessorSeeder.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Classroom: { name: string, acronym: string, type: string }
+    Professor: { names: string, last_name: string, second_last_name: string, dni: string, relationships: { belongsTo: User } }
