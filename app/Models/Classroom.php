@@ -10,6 +10,8 @@ class Classroom extends Model
     use \Backpack\CRUD\app\Models\Traits\CrudTrait;
     use HasFactory;
 
+
+
     /**
      * The attributes that are mass assignable.
      *
@@ -29,4 +31,11 @@ class Classroom extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function class_typologies()
+    {
+        return $this->belongsToMany(ClassTypology::class);
+    }
+
+
 }

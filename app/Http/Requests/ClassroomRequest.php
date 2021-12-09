@@ -26,6 +26,9 @@ class ClassroomRequest extends FormRequest
     public function rules()
     {
         return [
+            'name' => 'required|unique:classrooms',
+            'acronym' => 'required',
+            'type' => 'required'
             // 'name' => 'required|min:5|max:255'
         ];
     }

@@ -39,4 +39,8 @@ class Professor extends Model
     {
         return $this->belongsTo(\App\Models\User::class);
     }
+
+    public function getCompleteNameAttribute($value) {
+        return $this->names . " " . $this->last_name . " ". $this->second_last_name;
+    }
 }

@@ -26,10 +26,15 @@ class ProfessorRequest extends FormRequest
     public function rules()
     {
         return [
+            'names' => 'required', 
+            'last_name' => 'required', 
+            'second_last_name' => 'required',
+            //'email' => 'required',
+            'email'=> 'required|unique:users',
+            'dni' => 'required|size:8', 
             // 'name' => 'required|min:5|max:255'
         ];
     }
-
     /**
      * Get the validation attributes that apply to the request.
      *
