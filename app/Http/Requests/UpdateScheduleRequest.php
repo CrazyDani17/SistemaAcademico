@@ -116,7 +116,7 @@ class UpdateScheduleRequest extends FormRequest
                 foreach($schedules as $item){
                     if($item->id != $Id){
                         foreach($item->associate_professor->professors as $professor){
-                            $weekdayids[$professor->id][] = $item->weekday;
+                            $weekdayids[$professor->id][] = $item->weekday->id;
                             if(!in_array($professor->id, $professor_ids)){
                                 $professor_ids[] = $professor->id;
                             }
